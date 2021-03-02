@@ -1,0 +1,18 @@
+.text-area{
+    -fx-text-fill: #ab8b2b;
+    -fx-control-inner-background: #003630;
+    -fx-highlight-fill: red;
+    -fx-highlight-text-fill: yellow;
+}
+.list-view{
+    -fx-text-fill: #ab8b2b;
+    -fx-control-inner-background: #003630;
+    -fx-highlight-fill: red;
+    -fx-highlight-text-fill: yellow;
+}
+.scene{
+ -fx-border-radius: 25px;
+}
+.grid-pane{
+    -fx-border-radius: 25px;
+}
