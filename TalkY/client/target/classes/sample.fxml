@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="10" maxWidth="400.0" minWidth="400.0" stylesheets="css/stylesheet.css" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+    <stylesheets>
+        <URL value="@/css/stylesheet.css" />
+    </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane fx:id="anchorPane" maxWidth="405.0" minWidth="405.0" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #91cfc3; -fx-border-radius: 10%;" stylesheets="@css/stylesheet.css">
+            <children>
+            <HBox fx:id="hbox_listview" prefHeight="459.0" prefWidth="100.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+               <children>
+                   <ListView fx:id="clientList" maxWidth="100" minHeight="459.0" minWidth="100.0" onMouseReleased="#clientListMouseReleased" prefHeight="457.0" prefWidth="94.0" stylesheets="@css/stylesheet.css" />
+               </children>
+            </HBox>
+            <HBox layoutY="59.0" minWidth="405.0" prefWidth="405.0" VBox.vgrow="ALWAYS">
+
+                <TextArea fx:id="textArea" editable="false" layoutX="100.0" layoutY="59.0" prefColumnCount="2" prefHeight="459.0" prefWidth="389.0" scrollTop="10000.0" stylesheets="@css/stylesheet.css" wrapText="true" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="Times New Roman" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                  <HBox.margin>
+                     <Insets right="100.0" />
+                  </HBox.margin>
+                </TextArea>
+            </HBox>
+                <Label layoutX="137.0" layoutY="8.0" prefHeight="49.0" prefWidth="93.0" style="-fx-border-color: black;" stylesheets="@css/stylesheet.css" text="T A L K" textFill="#070707" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="6.0">
+                    <font>
+                        <Font name="Browallia New Bold" size="36.0" />
+                    </font>
+                    <padding>
+                        <Insets left="1.0" />
+                    </padding>
+                </Label>
+                <Label layoutX="224.0" layoutY="5.0" maxHeight="48.0" prefHeight="48.0" prefWidth="21.0" text="Y" textFill="#d91d00" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="5.0">
+                    <font>
+                        <Font name="Browallia New Bold Italic" size="50.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="-10.0" top="-10.0" />
+                    </padding>
+                </Label>
+                <Button fx:id="closeBTN" layoutX="371.0" layoutY="9.0" mnemonicParsing="false" onAction="#closeChat" onMouseEntered="#buttonAnimatedClose" onMouseExited="#buttonFree" style="-fx-background-color: #57998d;" text="Х" textFill="WHITE" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="6.0">
+                    <font>
+                        <Font name="Arimo Bold" size="12.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <HBox fx:id="authPanel" layoutY="519.0" prefHeight="82.0" prefWidth="405.0" style="-fx-background-color: #91cfc3;">
+                    <children>
+                        <TextField fx:id="login_field" maxWidth="147.0" prefHeight="25.0" prefWidth="147.0" promptText="login" HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="7.0" right="7.0" top="25.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="password_field" maxWidth="147.0" minWidth="147.0" onAction="#tryToAuth" promptText="password">
+                            <HBox.margin>
+                                <Insets bottom="10.0" top="25.0" />
+                            </HBox.margin>
+                        </PasswordField>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                              <Button fx:id="signIn_btn" minHeight="23.0" mnemonicParsing="false" onAction="#tryToAuth" onMouseEntered="#buttonAnimatedSignIn" onMouseExited="#buttonFree" prefWidth="87.0" style="-fx-background-color: #57998d;" text="Вход" textFill="#fffefe">
+                                  <font>
+                                      <Font name="Arimo Bold" size="12.0" />
+                                  </font>
+                                  <cursor>
+                                      <Cursor fx:constant="HAND" />
+                                  </cursor>
+                           <VBox.margin>
+                              <Insets left="7.0" right="7.0" top="10.0" />
+                           </VBox.margin>
+                              </Button>
+                              <Button fx:id="signUp_btn" minHeight="23.0" mnemonicParsing="false" onAction="#showRegWindow" onMouseEntered="#buttonAnimatedSignUp" onMouseExited="#buttonFree" prefWidth="87.0" style="-fx-background-color: #57998d;" text="Регистрация" textFill="#fffefe">
+                                  <font>
+                                      <Font name="Arimo Bold" size="10.0" />
+                                  </font>
+                                  <cursor>
+                                      <Cursor fx:constant="HAND" />
+                                  </cursor>
+                           <VBox.margin>
+                              <Insets left="7.0" right="7.0" top="10.0" />
+                           </VBox.margin>
+                              </Button>
+                     </children>
+                  </VBox>
+                    </children>
+                </HBox>
+                <HBox fx:id="msgPanel" layoutX="-1.0" layoutY="518.0" maxWidth="405.0" minWidth="405.0" prefHeight="82.0" prefWidth="405.0" style="-fx-background-color: #91cfc3;" visible="false">
+                    <children>
+
+                        <TextField fx:id="textField" onKeyPressed="#enterSend" prefWidth="300.0" style="-fx-background-color: #ffffff;" stylesheets="@css/stylesheet.css" HBox.hgrow="ALWAYS">
+                            <effect>
+                                <InnerShadow choke="0.43">
+                                    <color>
+                                        <Color red="0.34117648005485535" green="0.6000000238418579" blue="0.5529412031173706" />
+                                    </color>
+                                </InnerShadow>
+                            </effect>
+                            <HBox.margin>
+                                <Insets left="7.0" top="30.0" />
+                            </HBox.margin>
+                        </TextField>
+
+                        <Button fx:id="buttonSend" minWidth="100.0" mnemonicParsing="false" onAction="#sendMsgButton" onKeyPressed="#sendMsgButton" onMouseEntered="#buttonAnimated" onMouseExited="#buttonFree" prefWidth="100.0" style="-fx-background-color: #57998d;" stylesheets="@css/stylesheet.css" text="Отправить" textFill="#fffefe">
+                            <font>
+                                <Font name="Arimo Bold" size="12.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <HBox.margin>
+                                <Insets left="7.0" right="8.0" top="30.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            <TextField fx:id="nameSetText" layoutX="8.0" layoutY="5.0" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #91cfc3;" stylesheets="@css/stylesheet.css">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

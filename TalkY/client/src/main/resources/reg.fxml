@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="10" maxWidth="400.0" minWidth="400.0" stylesheets="css/stylesheet.css" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.RegController">
+    <stylesheets>
+        <URL value="@/css/stylesheet.css" />
+    </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+
+        <AnchorPane fx:id="anchorPane" maxHeight="500.0" maxWidth="405.0" minHeight="500.0" minWidth="405.0" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #91cfc3; -fx-border-radius: 10%;" stylesheets="@css/stylesheet.css">
+            <Label layoutX="152.0" layoutY="6.0" prefHeight="49.0" prefWidth="93.0" style="-fx-border-color: black;" stylesheets="@css/stylesheet.css" text="T A L K" textFill="#070707" AnchorPane.topAnchor="6.0">
+                <font>
+                    <Font name="Browallia New Bold" size="36.0" />
+                </font>
+                <padding>
+                    <Insets left="1.0" />
+                </padding>
+            </Label>
+            <Label layoutX="234.0" layoutY="6.0" maxHeight="48.0" prefHeight="48.0" prefWidth="21.0" text="Y" textFill="#d91d00" AnchorPane.topAnchor="6.0">
+                <font>
+                    <Font name="Browallia New Bold Italic" size="50.0" />
+                </font>
+                <padding>
+                    <Insets bottom="-10.0" top="-10.0" />
+                </padding>
+            </Label>
+            <TextField fx:id="nameSetText" layoutX="8.0" layoutY="5.0" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #91cfc3;" stylesheets="@css/stylesheet.css">
+                <font>
+                    <Font name="System Italic" size="12.0" />
+                </font>
+            </TextField>
+      <Button fx:id="signUp_btn" layoutX="143.0" layoutY="451.0" minHeight="27.0" mnemonicParsing="false" onAction="#tryToReg" onMouseEntered="#buttonAnimatedSignUp" onMouseExited="#buttonFree" prefHeight="27.0" prefWidth="122.0" style="-fx-background-color: #57998d;" text="Зарегистрироваться" textFill="#fffefe" AnchorPane.bottomAnchor="20.0">
+         <font>
+            <Font name="Arimo Bold" size="10.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="loginField" layoutX="128.0" layoutY="311.0" promptText="Login" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="320.0" />
+      <PasswordField fx:id="passwordField" layoutX="129.0" layoutY="363.0" promptText="Password" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" />
+      <TextField fx:id="nicknameField" layoutX="128.0" layoutY="410.0" promptText="Nickname" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" />
+      <TextArea fx:id="textArea" layoutY="63.0" prefHeight="224.0" prefWidth="405.0" editable="false" />
+</AnchorPane>
+        </GridPane>
